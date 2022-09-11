@@ -4,16 +4,10 @@
 [2, 3, 5, 6] = > [12, 15]
  """
 import math as m
-lst1 = [2, 3, 4, 5, 6]
-lst2 = [2, 3, 5, 6]
+lst1 = [int(i) for i in input('Введите числа: ').split(',')]
+result = []
+for i in range(m.ceil(len(lst1) / 2)):
+    result.append(lst1[i] * lst1[-i - 1])
 
-
-def multi_pairs_number(arr):
-    result = []
-    for i in range(m.ceil(len(arr) / 2)):
-        result.append(arr[i] * arr[-i - 1])
-    return result
-
-
-print(multi_pairs_number(lst1))
-print(multi_pairs_number(lst2))
+print(f'Начальный список {lst1}')
+print(f'Список произведений {result}')
